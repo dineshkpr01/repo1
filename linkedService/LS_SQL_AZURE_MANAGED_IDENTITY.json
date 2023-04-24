@@ -1,0 +1,10 @@
+{
+	"name": "LS_SQL_AZURE_MANAGED_IDENTITY",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=lazuresqlserver.database.windows.net;Initial Catalog=azuresqldb01"
+		}
+	}
+}
