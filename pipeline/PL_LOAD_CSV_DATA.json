@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "PL_LOAD_CSV_DATA",
 	"properties": {
 		"activities": [
 			{
-				"name": "Set variable1",
+				"name": "SET FOLDERNAME",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"userProperties": [],
