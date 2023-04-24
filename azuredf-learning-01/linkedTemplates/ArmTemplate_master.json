@@ -7,6 +7,15 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azuredf-learning-01"
 		},
+		"LS_SQL_AZURE_SQL_AUTH_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_AZURE_SQL_AUTH'"
+		},
+		"LS_SQL_AZURE_MANAGED_IDENTITY_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_AZURE_MANAGED_IDENTITY'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=lazuresqlserver.database.windows.net;Initial Catalog=azuresqldb01"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +42,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQL_AZURE_SQL_AUTH_connectionString": {
+						"value": "[parameters('LS_SQL_AZURE_SQL_AUTH_connectionString')]"
+					},
+					"LS_SQL_AZURE_MANAGED_IDENTITY_connectionString": {
+						"value": "[parameters('LS_SQL_AZURE_MANAGED_IDENTITY_connectionString')]"
 					}
 				}
 			},

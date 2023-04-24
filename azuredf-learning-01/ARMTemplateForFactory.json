@@ -6,6 +6,15 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "azuredf-learning-01"
+		},
+		"LS_SQL_AZURE_SQL_AUTH_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_AZURE_SQL_AUTH'"
+		},
+		"LS_SQL_AZURE_MANAGED_IDENTITY_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQL_AZURE_MANAGED_IDENTITY'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=lazuresqlserver.database.windows.net;Initial Catalog=azuresqldb01"
 		}
 	},
 	"variables": {
@@ -13,13 +22,13 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"name": "[concat(parameters('factoryName'), '/PL_LOAD_CSV_DATA')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Set variable1",
+						"name": "SET FOLDERNAME",
 						"type": "SetVariable",
 						"dependsOn": [],
 						"userProperties": [],
@@ -45,6 +54,32 @@
 					}
 				},
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_AZURE_SQL_AUTH')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_SQL_AZURE_SQL_AUTH_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_AZURE_MANAGED_IDENTITY')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_SQL_AZURE_MANAGED_IDENTITY_connectionString')]"
+				}
 			},
 			"dependsOn": []
 		}

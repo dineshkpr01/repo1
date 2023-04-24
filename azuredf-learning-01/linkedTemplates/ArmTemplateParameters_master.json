@@ -5,6 +5,12 @@
 		"factoryName": {
 			"value": "azuredf-learning-01"
 		},
+		"LS_SQL_AZURE_SQL_AUTH_connectionString": {
+			"value": ""
+		},
+		"LS_SQL_AZURE_MANAGED_IDENTITY_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=lazuresqlserver.database.windows.net;Initial Catalog=azuresqldb01"
+		},
 		"containerUri": {
 			"value": ""
 		},
