@@ -1,10 +1,27 @@
 {
 	"name": "pipeline1",
 	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "vName",
+					"value": "samr"
+				}
+			}
+		],
 		"parameters": {
 			"systemname": {
 				"type": "string",
 				"defaultValue": "sample"
+			}
+		},
+		"variables": {
+			"vName": {
+				"type": "String"
 			}
 		},
 		"annotations": []
