@@ -1,0 +1,12 @@
+{
+	"name": "LS_SQL_AZURE_SQL_AUTH",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=lazuresqlserver.database.windows.net;initial catalog=azuresqldb01;user id=db_user",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDJBMEFFODE5LTBEODMtNDMxMC05QkVBLUVEQkFFMTNDMjFGMV85NWMyOWM2Ni04YWQxLTRhMjItOTUzZC03MmVjMmZjNDcwYjkiDQp9"
+		}
+	}
+}
