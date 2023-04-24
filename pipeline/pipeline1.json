@@ -1,6 +1,12 @@
 {
 	"name": "pipeline1",
 	"properties": {
+		"parameters": {
+			"systemname": {
+				"type": "string",
+				"defaultValue": "sample"
+			}
+		},
 		"annotations": []
 	}
 }
